@@ -190,10 +190,3 @@ class Car {
     return `${speedUS * 1.6}km/h`;
   }
 }
-
-const newCar = new Car(120, 'Ford');
-console.log(newCar.speedUS);
-newCar.speedUS = 50;
-console.log(newCar.speedUS);
-console.log(newCar.accelerator);
-console.log(newCar.break);
