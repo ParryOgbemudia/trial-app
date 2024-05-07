@@ -170,7 +170,7 @@ account.latest = 50;
 console.log(account);
 console.log(account.latest);
 */
-
+/*
 class Car {
   constructor(speed, make) {
     this.speed = speed;
@@ -190,3 +190,32 @@ class Car {
     return `${speedUS * 1.6}km/h`;
   }
 }
+
+const newCar = new Car(120, 'Ford');
+console.log(newCar.speedUS);
+newCar.speedUS = 50;
+console.log(newCar.speedUS);
+console.log(newCar.accelerator);
+console.log(newCar.break);
+*/
+
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+
+const Student = function (firstName, birthYear, course) {
+  Person.call(this, firstName, birthYear);
+  this.course = course;
+};
+
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+};
+
+const mike = new Student('Mike', 2020, 'Computer Science');
+mike.introduce();
